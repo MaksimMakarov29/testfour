@@ -51,7 +51,7 @@ function auto1 () {
   document.getElementsByTagName("h1")[0].firstChild.data = score + "LC";
 }
 function pashalka () {
-  score += 10000;
+  score += 1;
   document.getElementsByTagName("h1")[0].firstChild.data = score + "LC";
 }
 function reboot () {
