@@ -58,3 +58,4 @@ function reboot () {
   alert("Ваш уровень прокачки " + updating + ". Ваш баланс " + score + " .");
 }
 
+save
