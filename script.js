@@ -1,4 +1,4 @@
-alert("Правила: копите деньги и прокачиваетесь, в минус можно уходить до -100, далее вы проиграете!")
+al("Правила: копите деньги и прокачиваетесь, в минус можно уходить до -100, далее вы проиграете!")
 var score = 0;
 updating = 1;
 function clickBtn() {
@@ -56,6 +56,24 @@ function pashalka () {
 }
 function reboot () {
   alert("Ваш уровень прокачки " + updating + ". Ваш баланс " + score + " .");
+
+document.querySelector('#score').innerHTML = cookie('get','score') + "LC";
+document.querySelector('#clickbtn').onclick=function(){ clickBtn(); }
+   
+var score = cookie('get','score');
+   
+function clickBtn() {
+    score++;
+    document.querySelector('#score').innerHTML = score + "LC";
+    cookie('set','score=' + score);
+}
+   
+function cookie(option,keyValue){
+    switch(option){
+        case option = 'set' : document.cookie = keyValue+"; expires=Fri, 31 Dec 9999 23:59:59 GMT"; break;
+        case option = 'get' : return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(keyValue).replace(/[\-\.\+\*]/g, "\\LC&") + "\\s*\\=\\s*([^;]*).*LC)|^.*LC"), "LC1")) || null; break;
+        case option = 'remove' : document.cookie = keyValue+"=; expires=Fri, 01 Jan 1970 00:00:00 GMT"; break;
+    }
 }
 
-save
+}
